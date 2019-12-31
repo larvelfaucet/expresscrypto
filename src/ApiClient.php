@@ -97,7 +97,7 @@ class ApiClient{
         return $this->_call(__FUNCTION__, $params);
     }
 
-    public function sendPayment(String $userId, String $currency, int $amount, String $ip = ''): ApiResponse {
+    public function sendPayment(String $userId, int $amount, String $currency = 'BTC', String $ip = ''): ApiResponse {
         $params = [
             'userId' => $userId,
             'currency' => $currency,
@@ -108,7 +108,7 @@ class ApiClient{
         return $this->_call(__FUNCTION__, $params);
     }
 
-    public function sendReferralCommission(String $userId, String $currency, int $amount, String $ip = ''): ApiResponse {
+    public function sendReferralCommission(String $userId, int $amount, String $currency = 'BTC', String $ip = ''): ApiResponse {
         $params = [
             'userId' => $userId,
             'currency' => $currency,
