@@ -1,0 +1,22 @@
+{
+    "name": "larvelfaucet/expresscrypto",
+    "description": "(Unofficial) Package to operate ExpressCrypto Microwallet for Cryptocurrencies. Official website: www.expresscrypto.io",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.5"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^6.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LarvelFaucet",
+            "email": "larvelfaucet@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": { "larvelfaucet\\ExpressCrypto\\" :"src" }
+    }
+}
