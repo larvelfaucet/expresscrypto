@@ -4,7 +4,7 @@ namespace larvelfaucet\ExpressCrypto;
 class ApiResponse {
     public $status;
     public $message;
-    private $data;
+    public $data;
 
     public function __construct($data){
         $this->data = new \stdClass();
