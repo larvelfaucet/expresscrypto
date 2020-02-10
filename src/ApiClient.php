@@ -8,6 +8,7 @@ class ApiClient{
     private const _baseUrl = 'https://expresscrypto.io/';
     private $apiKey = '';
     private $userToken = '';
+    private $timeout = 30;
 
     private $availableMethods = [
         'checkUserHash',
@@ -40,9 +41,14 @@ class ApiClient{
         return bin2hex(random_bytes($bytesLength));
     }
 
-    public function __construct(String $apiKey, String $userToken){
+    public function getTimeout(){
+        return $this->timeout;
+    }
+
+    public function __construct(String $apiKey, String $userToken, int $timeout = 30){
         $this->apiKey = $apiKey;
         $this->userToken = $userToken;
+        $this->timerout = $timeout;
     }
 
     public function getAvailableMethods(): Array {
@@ -70,7 +76,7 @@ class ApiClient{
 
     protected function _call(String $method, Array $args = []){
         // Let's assume the Timeout should be 30
-        $client = new Client(['timeout' => 30]); 
+        $client = new Client(['timeout' => $this->getTimeout()]); 
         //Building Args for HTTP Call
         $params = $args;
         $params['user_token'] = $this->userToken;
